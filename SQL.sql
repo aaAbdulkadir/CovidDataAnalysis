@@ -106,7 +106,7 @@ FROM PopulationVsVaccinations
 WHERE location = 'United Kingdom'
 ORDER BY 2,3
 
-
+-- vaccination percentages
 SELECT Deaths.location, Deaths.population, MAX(Vaccinations.total_vaccinations) AS TotalVaccinations, ROUND((MAX(Vaccinations.total_vaccinations)/Deaths.population)*100, 2) AS VaccinationPercentage
 FROM [Covid Project].dbo.['COVID-DEATHS$'] Deaths
 JOIN [dbo].['COVID-VACCINATIONS$'] Vaccinations ON Deaths.location = Vaccinations.location AND Deaths.date = Vaccinations.date
